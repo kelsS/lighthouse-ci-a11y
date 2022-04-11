@@ -1,0 +1,25 @@
+{
+    "ci": {
+        "collect": {
+            "staticDistDir": "./dist",
+            "url": ["http://localhost:8080"],
+            "settings": {
+                "disableStorageReset": false,
+                "throttlingMethod": "devtools",
+                "configPath": "./custom-config.js"
+            },
+            "assert": {
+                "assertions": {
+                    "categories:accessibility": ["pessimistic"],
+                    "color-contrast": [
+                        "error",
+                        { "aggregationMethod": "median", "minScore": 1 }
+                    ]
+                }
+            },
+            "upload": {
+                "target": "filesystem"
+            }
+        }
+    }
+}
